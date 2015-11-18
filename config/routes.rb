@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   namespace :admin do
   	root 'products#index'
     resources :products
+    resources :orders do
+      member do
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
+      end
+    end
     resources :users do
       member do
       	post :to_admin
@@ -25,6 +33,11 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
       post :checkout
+      delete :clean
     end
+  end
+  resources :items, controller: "cart_items"
+  namespace :account do
+    resources :orders
   end
 end
