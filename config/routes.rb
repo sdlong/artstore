@@ -3,6 +3,14 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+
+    # 設定使用者權限 ( 功能設定 )
+    resources :users do
+      member do
+        post :to_admin
+        post :to_normal
+      end
+    end
   end
 
   #resources :products
