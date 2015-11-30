@@ -10,7 +10,7 @@ gem "awesome_rails_console"
 gem 'aasm'
 gem 'letter_opener', group: :development
 gem 'roadie', '2.4.3'
-
+gem 'pay2go'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
