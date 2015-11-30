@@ -3,12 +3,22 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+    
+    # 後台的訂單可以依照「按照狀態圖」改變狀態
     resources :orders do
       member do
         post :cancel
         post :ship
         post :shipped
         post :return
+      end
+    end
+
+    # 設定使用者權限 ( 功能設定 )
+    resources :users do
+      member do
+        post :to_admin
+        post :to_normal
       end
     end
   end
