@@ -24,31 +24,36 @@
 
 		<hr>
 
-		<h2>訂單資訊</h2>
-		<div class="order-form">
-			<%= simple_form_for @order do |f| %>
-				<%= f.simple_fields_for :info do |c| %>
-					<legend>訂購人</legend>
-					<div class="form-group col-lg-6">
-						<%= c.input :billing_name %>
-					</div>
-					<div class="form-group col-lg-6">
-						<%= c.input :billing_address %>
-					</div>
+		    <h2> 訂單資訊 </h2>
 
-					<legend>收貨人</legend>
-					<div class="form-group col-lg-6">
-						<%= c.input :shipping_name %>
-					</div>
-					<div class="form-group col-lg-6">
-						<%= c.input :shipping_address %>
-					</div>
-				<% end %>
+    <div class="order-form">
 
-				<div class="checkout">
-					<%= f.submit "生成訂單", class: "btn btn-lg btn-danger pull-right pull-right", data: { disable_with: "Submitting..." } %>
-				</div>
-			<% end %>
+      <%= simple_form_for @order do |f| %>
+
+        <%= f.simple_fields_for :info do |c| %>
+
+          <legend> 訂購人</legend>
+          <div class="form-group col-lg-6">
+            <%= c.input :billing_name  %>
+          </div>
+          <div class="form-group col-lg-6">
+            <%= c.input :billing_address  %>
+          </div>
+
+          <legend> 收貨人</legend>
+          <div class="form-group col-lg-6">
+           <%= c.input :shipping_name  %>
+          </div>
+          <div class="form-group col-lg-6">
+            <%= c.input :shipping_address  %>
+          </div>
+        <% end %>
+
+        <div class="checkout">
+          <%= f.submit "生成訂單", class: "btn btn-lg btn-danger pull-right",
+                       data: { disable_with: "Submitting..." } %>
+        </div>
+      <% end %>
 		</div>
 	</div>
 </div>
