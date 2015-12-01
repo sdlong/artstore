@@ -1,8 +1,4 @@
-class Admin::OrdersController < ApplicationController
-	  layout "admin"
-
-  before_action :authenticate_user!
-  before_action :admin_required
+class Admin::OrdersController < AdminController
 
 	def index
 		@orders = Order.order("id DESC")
@@ -13,7 +9,7 @@ class Admin::OrdersController < ApplicationController
 		@order_info = @order.info
 		@order_items = @order.items
 	end
-	
+
   def ship
     @order = Order.find(params[:id])
     @order.ship!
