@@ -5,9 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-u = User.new
-u.email = "perryhaha@gmail.com"
-u.password = "11111111"
-u.password_confirmation = "11111111"
-u.is_admin = true
-u.save
+create_users = for i in 1..10 do
+  user = User.create(
+    email: "demo_user_#{i}@test.com",
+    password: "11111111", 
+    password_confirmation: "11111111"
+    )
+end
+
+admin_user = User.create(
+	email: "perryhaha@gmail.com", 
+	password: "11111111", 
+	password_confirmation: "11111111", 
+	is_admin: true
+	)
