@@ -1,12 +1,6 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
 zh-TW:
-  orders:
-    order_state:
-      order_placed: 已下單
-      paid: 已付款
-      shipping: 出貨中
-      shipped: 已到貨
-      order_cancelled: 取消訂單
-      good_returned: 退貨
   devise:
     confirmations:
       confirmed: "您的帳號已通過驗證，現在您已成功登入。"
