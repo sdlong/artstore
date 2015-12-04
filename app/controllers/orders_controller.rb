@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 			current_cart.clean!
 
 			# 在訂單建立時寄通知信
-			OrderMailer.notify_order_placed(@order).deliver!
+			#OrderMailer.notify_order_placed(@order).deliver!
 			redirect_to order_path(@order.token)
 		else
 			render "carts/checkout"
