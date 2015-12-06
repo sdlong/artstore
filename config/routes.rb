@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users
   namespace :admin do
   	root 'products#index'
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     member do
       get :pay_with_credit_card
       post :pay2go_cc_notify
+      post :pay2go_atm_complete
     end
   end
   root 'products#index'
