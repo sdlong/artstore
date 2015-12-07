@@ -85,13 +85,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'https://cryptic-scrubland-7800.herokuapp.com/' }
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smto_settings = {
+  config.action_mailer.smtp_settings = {
     port: 587,
     address: "smtp.mailgun.org",
     user_name: ENV["mailgun_user"],
     password: ENV["mailgun_secret"],
     domain: "sandbox51776498dafb4c67acdebac066da1423.mailgun.org",
-    authentication: :plain,
+    authentication: :plain
   }
 
 end
