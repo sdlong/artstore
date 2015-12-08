@@ -82,7 +82,7 @@ Rails.application.configure do
     Pay2go.integration_mode = :development
   end
 
-  config.action_mailer.default_url_options = { host: 'cryptic-scrubland-7800.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'artstore-fun.herokuapp.com' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
