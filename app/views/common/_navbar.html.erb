@@ -13,7 +13,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li class="shopping-car">
           <%= link_to carts_path do %>
             購物車<i class="fa fa-shopping-cart"></i> ( <%= render_cart_items_count(current_cart) %>)
           <% end %>

@@ -1,0 +1,31 @@
+a{
+	transition: all 0.3s ease-in;
+}
+.navbar-default {
+	background-color: #2F5C84;
+	border-bottom: 1px solid #ddd;
+	color: #fff;
+}
+.navbar.navbar-default {
+	border-radius: 0;
+}
+.navbar-default .navbar-brand {
+    color: #FFF;
+    &:hover {
+    	color: #FFF;
+    	text-shadow: 1px 5px 5px #2F2F30;
+    }
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #D4D4D4;
+    &:hover,&:focus {
+    	color: #fff;
+    }
+}
+.navbar-nav > li.shopping-car > a {
+	color: #fff;	
+}
+.navbar-default .navbar-nav > .active > a {
+	text-shadow: 1px 1px 1px rgba(255,255,255,1);
+}

@@ -1,3 +1,89 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.product-list-wrap {
+	.col-md-3 {
+		margin-bottom: 1em;
+	}
+}
+.product-list {
+	border: 1px solid #ddd;
+	text-align: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	padding: 0;
+
+	a {
+		display: block;
+		width: 100%;
+	}
+	.thumbnail {
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+}
+
+
+.item-footer {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+    padding: 0 0.5em;
+    width: 100%;
+
+	.product-intro {
+		font-weight: 400;
+		text-align: left;
+		height: 40px;
+		min-height: 40px;		
+		overflow: hidden;
+	}
+	.product-price{
+		color: red;
+		text-align: right;
+		-webkit-flex-basis: 17 0px;
+		    -ms-flex-preferred-size: 17 0px;
+		        flex-basis: 17 0px;
+		font-size: 18px;	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
