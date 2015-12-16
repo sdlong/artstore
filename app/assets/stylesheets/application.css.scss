@@ -21,6 +21,7 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "navbar";
+@import "devise-style";
 
 .product-price {
 	padding-top: 20px;
@@ -29,4 +30,10 @@
 	font-size: 30px;
 	font-weight: bold;
 	color: #ff007c;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #EAEAEA;
 }

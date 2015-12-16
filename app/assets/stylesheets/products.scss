@@ -27,6 +27,11 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 	padding: 0;
+	-webkit-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+	&:hover {
+		border: 1px solid #2F5C84;
+	}
 
 	a {
 		display: block;
@@ -69,13 +74,12 @@
 	.product-price{
 		color: red;
 		text-align: right;
-		-webkit-flex-basis: 17 0px;
-		    -ms-flex-preferred-size: 17 0px;
-		        flex-basis: 17 0px;
+		-webkit-flex-basis: 170px;
+		    -ms-flex-preferred-size: 170px;
+		        flex-basis: 170px;
 		font-size: 18px;	
 	}
 }
-
 
 
 

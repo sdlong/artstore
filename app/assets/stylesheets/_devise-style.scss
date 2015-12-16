@@ -1,0 +1,41 @@
+.devise-form {
+	width: 360px;
+	margin: 0 auto;
+	padding: 1em;
+
+	h2 {
+		text-align: center;
+		color: #2F5C84;
+	}
+	.field {
+		width: 100%;
+		margin-bottom: 1.25em;
+	}
+	input[type="password"],
+	input[type="email"]{
+		width: 100%;
+		padding: 0.5em 1em;
+	}
+	input[type="submit"] {
+		width: 100%;
+		padding: 0.75em 1em;
+	}
+	.remember_me {
+		margin-bottom: 0.5em;
+	}
+}
+.space-between {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	        align-items: center;
+	margin-top: 0.75em;
+}
