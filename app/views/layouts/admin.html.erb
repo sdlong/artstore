@@ -8,16 +8,25 @@
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
-	<%= render "common/navbar" %>
-	<div class="container">
+<body class="backstage-style">
+	<%= render "common/navbarbackstage" %>
+	<div class="container shadow-body">
 		
 		<%= notice_message %>
-		<div class="row">
+		<div class="row flex-wrap ">
 			<div class="col-md-2">
-				<ul class="nav nav-pills nav-stacked" style="max-width: 300xp;">
-					<li> <%= link_to("Products", admin_products_path) %> </li>
-					<li> <%= link_to("Users", admin_users_path) %> </li>
+				<div class="title">Main Menu</div>
+				<ul class="nav nav-pills nav-stacked">
+					<li>
+						<%= link_to admin_products_path do %>
+							<i class="fa fa-heart"></i>Products
+						<% end %>
+					</li>
+					<li>
+						<%= link_to admin_users_path do %>
+							<i class="fa fa-user"></i>Users
+						<% end %>
+					</li>
 				</ul>
 			</div>
 			<div class="col-md-10">

@@ -1,0 +1,106 @@
+.navbar.navbar-default.backstage {
+	margin-bottom: 50px;
+}
+
+.container.shadow-body {
+	background-color: #fff;
+	margin-bottom: 50px;
+	padding: 0;
+	box-shadow: 0px 10px 40px rgba(0,0,0,0.7);
+}
+
+// 後台
+.backstage-style {
+	background-color: #BCC1C9;
+}
+
+
+// 前台
+.frontstage-style {
+	background-color: #F5F5F5;
+	.container.shadow-body {
+		padding: 1em;
+	}	
+}
+
+
+
+.flex-wrap {
+	display: flex;
+
+	.col-md-2 {
+		background-color: #2A2D33;
+	    padding: 5em 0;
+	    a {
+	    	color: gray;
+	    	border-radius: 0!important;
+	    	&:hover {
+				color:  #e7e7e7;
+				background: #656C7E;
+	    	}
+	    }
+	    .title {
+	    	color: gray;
+	    	border-bottom: 1px solid #3C3C3C;
+	    	// padding-bottom: 0.75em;
+	    	padding: 10px 15px;
+	    	font-size: 14px;
+	    }
+	    .nav {
+	    	.fa {
+	    		margin-right: 5px;
+	    	}
+	    }
+	}
+	.col-md-10 {
+		background-color: #F7F7F7;
+		padding: 5em 2em;
+
+		h2 {
+			border-bottom: 1px solid #ddd;
+			margin: 0 0 1em 0;
+			padding-bottom: 10px;
+		}
+	}
+}
+
+.table-bordered.backstage-table {
+	border-top: 1px solid #CDDCEC;
+	border-bottom: 1px solid #CDDCEC;	
+
+	thead {
+		background: #2F5C84;
+		color: #fff;
+	}   
+	.thumbnail {
+		width: 80px;
+		height: 80px;
+		margin-bottom: 0;
+	} 
+}
+.table-bordered.backstage-table tr th {
+    border: none;
+    border-bottom: 2px solid #DCDCDC;
+    padding: 8px 12px;
+    vertical-align: middle;    
+}
+.table-bordered.backstage-table tr td {
+    border: none;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 8px 12px;
+    vertical-align: middle;    
+
+    .fa-pencil {
+    	margin-right: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
