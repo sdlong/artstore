@@ -40,6 +40,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.0)
+    autoprefixer-rails (6.1.0.1)
+      execjs
+      json
     awesome_print (1.6.1)
     awesome_rails_console (0.2.1)
       awesome_print
@@ -62,6 +65,13 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    ckeditor (4.1.5)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -337,10 +347,12 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  autoprefixer-rails
   awesome_rails_console
   bootstrap-sass
   byebug
   carrierwave
+  ckeditor
   coffee-rails (~> 4.1.0)
   delayed_job_active_record
   devise
