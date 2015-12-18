@@ -5,10 +5,16 @@
 	<meta charset="UTF-8">
 	<title>Artstore 後台</title>
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	
 	<%= csrf_meta_tags %>
 </head>
 <body class="backstage-style">
+<%= content_for :handwrite_javascript do %>
+	<script>
+		$('.dropdown-toggle').dropdown()
+	</script>
+<% end %>
+
 	<%= render "common/navbarbackstage" %>
 	<div class="container shadow-body">
 		
@@ -34,5 +40,11 @@
 			</div>
 		</div>
 	</div>
+
+
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= yield :handwrite_javascript %>
+
 </body>
 </html>
