@@ -2,44 +2,59 @@
   <li><a href="/">Home</a></li>
   <li><a href="#">Library</a></li>
   <li><%=  @product.title %></li>
-</ol>	
-<div class="row product-wrap">
-	<div class="col-md-4">
-		<% if @product.photo %>
-			<%= image_tag(@product.photo.image.medium.url, class: "thumbnail") %>		
-		<% else %>
-			<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-		<% end %>
+</ol>
+<div class="row flex">
+	<div class="col-md-3 sidebar">
+		<div class="title">商品目錄</div>
+		<ul>
+			<li><a href="/">類別1</a></li>
+			<li><a href="/">類別2</a></li>
+			<li><a href="/">類別3</a></li>
+			<li><a href="/">類別4</a></li>
+			<li><a href="/">類別5</a></li>
+		</ul>
 	</div>
-	<div class="col-md-8">
-		<div class="product-data">
-		<h2><%= @product.title %></h2>
-		
-			<div class="product-page-intro">
-				<%=raw @product.description %>
-			</div>
+	<div class="col-md-9">
+	<div class="row product-wrap">
+		<div class="col-md-4">
+			<% if @product.photo %>
+				<%= image_tag(@product.photo.image.medium.url, class: "thumbnail") %>		
+			<% else %>
+				<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+			<% end %>
+		</div>
+		<div class="col-md-8">
+			<div class="product-data">
+			<h2><%= @product.title %></h2>
 			
-			<div class="product-bottom">
-				<div class="space-between">
-					<div>數量： <%= @product.quantity %></div>
-					<div class="product-price">
-						$ <%= @product.price %>
-
-						<div class="pull-right">
-							<% if @product.quantity > 0 %>
-								<%= link_to("加入購物車", add_to_cart_product_path(@product), method: :post, class: "btn btn-lg btn-danger") %>
-							<% else %>
-								已銷售一空，無法購買
-							<% end %>
-						</div>	
-
-					</div>
+				<div class="product-page-intro">
+					<%=raw @product.description %>
 				</div>
-									
-			</div>
+				
+				<div class="product-bottom">
+					<div class="space-between">
+						<div>數量： <%= @product.quantity %></div>
+						<div class="product-price">
+							$ <%= @product.price %>
+
+							<div class="pull-right">
+								<% if @product.quantity > 0 %>
+									<%= link_to("加入購物車", add_to_cart_product_path(@product), method: :post, class: "btn btn-lg btn-danger") %>
+								<% else %>
+									已銷售一空，無法購買
+								<% end %>
+							</div>	
+
+						</div>
+					</div>
+										
+				</div>
 
 
-					
-		</div> <!-- product-data // -->
-	</div>
-</div>
+						
+			</div> <!-- product-data // -->
+		</div>
+	</div>		
+	</div>	
+</div>	
+

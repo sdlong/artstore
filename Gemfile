@@ -13,6 +13,7 @@ gem 'roadie', '2.4.3'
 gem 'pay2go'
 gem 'autoprefixer-rails'
 gem 'ckeditor'
+gem 'seo_helper'
 
 group :production do
 	gem "pg"

@@ -3,10 +3,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Artstore 後台</title>
+	<!-- <title>Artstore 後台</title> -->
 	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<%= csrf_meta_tags %>
+	<%= render_page_title_tag %>
 </head>
 <body class="backstage-style">
 <%= content_for :handwrite_javascript do %>
