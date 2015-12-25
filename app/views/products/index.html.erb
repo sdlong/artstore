@@ -15,8 +15,20 @@
 					</div>
 					<div class="product-price">
 						$ <%= product.price %>				
-					</div>					
+					</div>	
+
 				</div>
+				<div class="mask">
+					<% if product.quantity > 0 %>
+						<%= link_to("加入購物車", add_to_cart_product_path(product), method: :post, class: "add2cart") %>
+					<% else %>
+						<span class="sorry">已銷售一空，無法購買</span>
+					<% end %>
+
+					<%= link_to("查看商品", product_path(product), class: "view-detail") %>					
+				</div>
+
+
 			</div>
 		</div>
 	<% end %>
