@@ -72,6 +72,10 @@ group :development, :test do
   gem "fuubar"
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+end
+
 group :production do
   gem "pg"
   gem "rails_12factor"
