@@ -25,4 +25,12 @@ RSpec.describe User, type: :model do
     it { is_expected.to be_invalid }
     it { expect(user.errors).to include(:email) } # 驗證是否為 email 的錯誤
   end
+
+  context "password 跟 password_confirmation 必須要相同" do
+    let(:password_confirmation) { "7890" }
+
+    # it { binding.pry }  # <== 如果要用 pry 下中斷點，記得要先宣告 it, 不然會發現無法下 expect 測判斷
+    it { is_expected.to be_invalid }
+    it { expect(user.errors).to include(:password_confirmation) }
+  end
 end
