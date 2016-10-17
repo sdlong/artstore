@@ -11,4 +11,11 @@ RSpec.describe User, type: :model do
                        password_confirmation: "12345678")
     expect(user).to be_valid   # 等同於 user.valid? == true  , 代表 ActiveModel::Validations pass 而且沒有任何 errors
   end
+
+  it "測試 user 建立失敗" do
+    user = User.create(email: "",
+                       password: "12345678",
+                       password_confirmation: "12345678")
+    expect(user).to be_invalid
+  end
 end
