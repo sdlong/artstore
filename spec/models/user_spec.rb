@@ -19,10 +19,10 @@ RSpec.describe User, type: :model do
     is_expected.to be_valid   # 等同於 user.valid? == true  , 代表 ActiveModel::Validations pass 而且沒有任何 errors
   end
 
-  it "測試 user 建立失敗" do
-    user = User.create(email: "",
-                       password: "12345678",
-                       password_confirmation: "12345678")
-    expect(user).to be_invalid
+  context "測試 user 建立失敗" do
+    let(:email) { "" } # 如果要修改參數，則可以用 context 來包成一個 block, 來自訂 block 裡的參數值
+                       # let 不能用在 it 裡面，這是 rspec 的設計規範
+    it { is_expected.to be_invalid }
+    it { expect(user.errors).to include(:email) } # 驗證是否為 email 的錯誤
   end
 end
