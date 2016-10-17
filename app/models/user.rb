@@ -10,11 +10,11 @@ class User < ActiveRecord::Base
     is_admin
   end
 
-  def to_admin
+  def to_admin_user!
     self.update_columns(is_admin: true)
   end
 
-  def to_normal
+  def to_normal_user!
     self.update_columns(is_admin: false)
   end
 end

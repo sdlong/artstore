@@ -2,6 +2,11 @@ class Admin::ProductsController < AdminController
 
   def index
     @products = Product.all
+
+    respond_to do |format|
+      format.json
+      format.html
+    end
   end
 
   def new
