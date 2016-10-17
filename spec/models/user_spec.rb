@@ -33,4 +33,15 @@ RSpec.describe User, type: :model do
     it { is_expected.to be_invalid }
     it { expect(user.errors).to include(:password_confirmation) }
   end
+
+=begin
+對於 mehtod 測試，為了讓測試碼好讀，建議如下
+用 describe/context 來設一個測 method 的 block
+如果是 instace method, 用 '#' 做開頭
+如果是 class   method(包括 scope), 用 '::' 做開頭
+=end
+
+  describe "#admin?"
+  describe "#to_admin_user!"
+  describe "#to_normal_user!"
 end
