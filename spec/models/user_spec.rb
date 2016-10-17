@@ -3,13 +3,15 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject(:user) { User.create(email: email,
                                password: password,
-                               password_confirmation: password_confirmation) }
+                               password_confirmation: password_confirmation,
+                               is_admin: is_admin) }
 
   # 設定 subject 之後, expect(user) 即可簡化成 is_expected.to (將 subject 當成預設用來做測試判斷的物件)
 
   let(:email) { "user@test.com" }
   let(:password) { "12345678" }
   let(:password_confirmation) { "12345678" }
+  let(:is_admin) { false }
 
   it "第一個測試" do            # 每一個 it 都代表一個測試的項目
     is_expected.to be_present # expect 是用來對測試下預期的判斷, 執行結果會顯示在 rspec 運作訊息裡
@@ -41,7 +43,18 @@ RSpec.describe User, type: :model do
 如果是 class   method(包括 scope), 用 '::' 做開頭
 =end
 
-  describe "#admin?"
+  describe "#admin?" do
+    it { expect(user.admin?).to eq false } # 預設為 false
+    it { expect(user.admin?).to eq user.is_admin }
+
+    context "建立 admin user" do
+      let(:is_admin) { true }
+
+      it { expect(user.admin?).to eq true }
+      it { expect(user.admin?).to eq user.is_admin }
+    end
+  end
+
   describe "#to_admin_user!"
   describe "#to_normal_user!"
 end
