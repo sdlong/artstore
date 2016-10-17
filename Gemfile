@@ -68,6 +68,7 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'guard-rspec'
+  gem "terminal-notifier-guard"
 end
 
 group :production do
