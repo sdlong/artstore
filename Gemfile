@@ -67,6 +67,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
+  gem 'guard-rspec'
 end
 
 group :production do
