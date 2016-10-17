@@ -93,6 +93,9 @@ GEM
     font-awesome-rails (4.4.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
+    fuubar (2.2.0)
+      rspec-core (~> 3.0)
+      ruby-progressbar (~> 1.4)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     guard (2.14.0)
@@ -228,6 +231,7 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
+    ruby-progressbar (1.8.1)
     ruby_dep (1.4.0)
     sass (3.4.15)
     sass-rails (5.0.3)
@@ -285,6 +289,7 @@ DEPENDENCIES
   devise
   figaro
   font-awesome-rails
+  fuubar
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
