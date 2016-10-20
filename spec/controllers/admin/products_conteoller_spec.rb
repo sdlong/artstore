@@ -11,9 +11,9 @@ RSpec.describe Admin::ProductsController, type: :controller do
     it { expect(response.header['Content-Type']).to include "text/html" }
   end
 
-  describe "GET index" do
-    before { sign_in :user, user }
+  before { sign_in :user, user }
 
+  describe "GET index" do
     context "format html" do
       before { get :index }
 
@@ -41,16 +41,12 @@ RSpec.describe Admin::ProductsController, type: :controller do
   end
 
   describe "GET new" do
-    context "login admin_user" do
-      before { sign_in :user, admin_user }
-      before { get :new }
+    before { get :new }
 
-      it_behaves_like "valid: access"
-    end
+    it_behaves_like "valid: access"
 
     context "login normal_user" do
-      before { sign_in :user, normal_user }
-      before { get :new }
+      let(:user) { create(:user) }
 
       it { expect(response).to redirect_to root_path }
     end
@@ -65,7 +61,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     end
 
     context "login normal_user" do
-      before { sign_in :user, normal_user }
+      let(:user) { create(:user) }
       before { get :edit, id: product.id }
 
       it { expect(response).to redirect_to root_path }
@@ -92,7 +88,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     end
 
     context "login normal_user" do
-      before { sign_in :user, normal_user }
+      let(:user) { create(:user) }
       before { post :create, product: { title: "macbook",
                                         price: "60000",
                                         quantity: "5",
@@ -113,7 +109,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     end
 
     context "login normal_user" do
-      before { sign_in :user, normal_user }
+      let(:user) { create(:user) }
       before { patch :update, id: product.id, product: { title: "Macbook Pro" } }
 
       it { expect(response).to redirect_to root_path }
