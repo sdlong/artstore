@@ -54,7 +54,22 @@ RSpec.describe Admin::ProductsController, type: :controller do
     end
   end
 
-  describe "GET edit"
+  describe "GET edit" do
+    context "login admin_user" do
+      before { sign_in :user, admin_user }
+      before { get :edit, id: product.id }
+
+      it { expect(response).to be_success }
+      it { expect(response.header['Content-Type']).to include "text/html" }
+    end
+
+    context "login normal_user" do
+      before { sign_in :user, normal_user }
+      before { get :edit, id: product.id }
+
+      it { expect(response).to redirect_to root_path }
+    end
+  end
 
   describe "POST create"
 
