@@ -2,8 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Admin::ProductsController, type: :controller do
   subject(:user) { create(:admin_user) }
-  subject(:admin_user) { create(:admin_user) }
-  subject(:normal_user){ create(:user) }
   subject(:product)    { create(:product) }
 
   shared_examples_for "valid: access" do
