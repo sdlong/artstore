@@ -6,14 +6,18 @@ RSpec.describe Admin::ProductsController, type: :controller do
   subject(:normal_user){ create(:user) }
   subject(:product)    { create(:product) }
 
+  shared_examples_for "valid: access" do
+    it { expect(response).to be_success }
+    it { expect(response.header['Content-Type']).to include "text/html" }
+  end
+
   describe "GET index" do
     before { sign_in :user, user }
 
     context "format html" do
       before { get :index }
 
-      it { expect(response).to be_success }
-      it { expect(response.header['Content-Type']).to include "text/html" }
+      it_behaves_like "valid: access"
 
       context "normal user" do
         let(:user) { create(:user) }
@@ -41,8 +45,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
       before { sign_in :user, admin_user }
       before { get :new }
 
-      it { expect(response).to be_success }
-      it { expect(response.header['Content-Type']).to include "text/html" }
+      it_behaves_like "valid: access"
     end
 
     context "login normal_user" do
@@ -58,8 +61,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
       before { sign_in :user, admin_user }
       before { get :edit, id: product.id }
 
-      it { expect(response).to be_success }
-      it { expect(response.header['Content-Type']).to include "text/html" }
+      it_behaves_like "valid: access"
     end
 
     context "login normal_user" do
