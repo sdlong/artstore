@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Admin::ProductsController, type: :controller do
-  subject(:admin_user) { User.create(email: "admin@test.com", password: "12345678", password_confirmation: "12345678", is_admin: true) }
-  subject(:normal_user){ User.create(email: "user@test.com", password: "12345678", password_confirmation: "12345678") }
+  subject(:admin_user) { create(:admin_user) }
+  subject(:normal_user){ create(:user) }
   subject(:product)    { create(:product) }
 
   describe "GET index" do
