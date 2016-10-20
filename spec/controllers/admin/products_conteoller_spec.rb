@@ -53,15 +53,12 @@ RSpec.describe Admin::ProductsController, type: :controller do
   end
 
   describe "GET edit" do
-    context "login admin_user" do
       before { get :edit, id: product.id }
 
       it_behaves_like "valid: access"
-    end
 
     context "login normal_user" do
       let(:user) { create(:user) }
-      before { get :edit, id: product.id }
 
       it { expect(response).to redirect_to root_path }
     end
