@@ -54,7 +54,6 @@ RSpec.describe Admin::ProductsController, type: :controller do
 
   describe "GET edit" do
     context "login admin_user" do
-      before { sign_in :user, admin_user }
       before { get :edit, id: product.id }
 
       it_behaves_like "valid: access"
@@ -70,7 +69,6 @@ RSpec.describe Admin::ProductsController, type: :controller do
 
   describe "POST create" do
     context "login admin_user" do
-      before { sign_in :user, admin_user }
       before { post :create, product: { title: "macbook",
                                         price: "60000",
                                         quantity: "5",
@@ -100,7 +98,6 @@ RSpec.describe Admin::ProductsController, type: :controller do
 
   describe "PUT/PATCH update" do
     context "login admin_user" do
-      before { sign_in :user, admin_user }
       before { patch :update, id: product.id, product: { title: "Macbook Pro" } }
 
       it { is_expected.to redirect_to admin_products_path }
