@@ -90,17 +90,14 @@ RSpec.describe Admin::ProductsController, type: :controller do
   end
 
   describe "PUT/PATCH update" do
-    context "login admin_user" do
-      before { patch :update, id: product.id, product: { title: "Macbook Pro" } }
+    before { patch :update, id: product.id, product: { title: "Macbook Pro" } }
 
-      it { is_expected.to redirect_to admin_products_path }
-      it { expect(response.header['Content-Type']).to include "text/html" }
-      it { expect(Product.find(product.id).title).to eq "Macbook Pro" }
-    end
+    it { is_expected.to redirect_to admin_products_path }
+    it { expect(response.header['Content-Type']).to include "text/html" }
+    it { expect(Product.find(product.id).title).to eq "Macbook Pro" }
 
     context "login normal_user" do
       let(:user) { create(:user) }
-      before { patch :update, id: product.id, product: { title: "Macbook Pro" } }
 
       it { expect(response).to redirect_to root_path }
     end
