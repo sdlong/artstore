@@ -1,3 +1,4 @@
+require 'factory_girl_rails'
 require 'shoulda/matchers'
 require 'devise'
 
@@ -29,6 +30,9 @@ RSpec.configure do |config|
 
   # 載入 Devise 的 TestHelper 做 controller 測試
   config.include(Devise::TestHelpers, type: :controller)
+
+  # 使用 FactoryGirl 建測試用 Model instance
+  config.include FactoryGirl::Syntax::Methods
 
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

@@ -71,6 +71,7 @@ group :development, :test do
   gem "terminal-notifier-guard"
   gem "fuubar"
   gem "faker"
+  gem 'factory_girl_rails'
 end
 
 group :test do
