@@ -70,6 +70,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem "terminal-notifier-guard"
   gem "fuubar"
+  gem "faker"
 end
 
 group :test do

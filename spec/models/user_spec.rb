@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
 
   # 設定 subject 之後, expect(user) 即可簡化成 is_expected.to (將 subject 當成預設用來做測試判斷的物件)
 
-  let(:email) { "user@test.com" }
+  let(:email) { Faker::Internet.email }
   let(:password) { "12345678" }
   let(:password_confirmation) { "12345678" }
   let(:is_admin) { false }
